@@ -13,6 +13,6 @@ module.exports = [
   },
   {
     name: /^(feature|hotfix|fix)\/.+/,
-    allowPush: false
+    allowPush: true
   }
 ];
