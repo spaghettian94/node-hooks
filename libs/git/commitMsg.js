@@ -1,6 +1,11 @@
 /* eslint-disable no-console */
+const checkCommitMessage = require('../modules/checkCommitMessage');
+const formatCommitPrefixEmoji = require('../modules/formatCommitPrefixEmoji');
 
 const errors = [];
+
+// ルールチェック
+errors.push(...checkCommitMessage());
 
 // まとめて警告
 if (errors.length > 0) {
