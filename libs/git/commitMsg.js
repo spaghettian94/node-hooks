@@ -10,3 +10,6 @@ if (errors.length > 0) {
 } else {
   console.log('ルールチェックが完了しました。');
 }
+
+// コミットメッセージのフォーマット
+formatCommitPrefixEmoji();
