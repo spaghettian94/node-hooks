@@ -1,0 +1,8 @@
+export PATH="$PATH:/usr/local/bin"
+
+# nodenv (on anyenv) の場合のPATH初期化
+if [ type anyenv > /dev/null 2>&1 ]; then
+  eval "$(anyenv init -)";
+elif [ type nodenv > /dev/null 2>&1 ]; then
+  eval "$(nodenv init -)";
+fi
