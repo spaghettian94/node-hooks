@@ -13,12 +13,11 @@ module.exports = () => {
     errors.push("🚨 コミットメッセージエラー: コミット件名が空白です。");
   }
 
-  const prefix = subject.replace(/\W.*/, "").toLowerCase();
   const validPrefix = [
     ...Object.keys(prefixEmojis),
-    ...Object.keys(prefixEmojis).map((key) => `${key} ${prefixEmojis[key]}`),
+    ...Object.keys(prefixEmojis).map((key) => `${prefixEmojis[key]} ${key}`),
   ];
-  if (!validPrefix.includes(prefix)) {
+  if (!validPrefix.some((prefix) => subject.match(new RegExp(`^${prefix}`)))) {
     errors.push(
       `🚨 コミットメッセージエラー: コミットメッセージにはprefixをつけてください。\n${Object.keys(
         prefixEmojis
